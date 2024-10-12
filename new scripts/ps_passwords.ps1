@@ -1,9 +1,11 @@
 Clear-Host
 # Export the current security policy settings to a file
+#secedit /export /cfg $outputFile
 secedit /export /cfg $outputFile
 
 # Read the content of the exported file
-$outputFile = "$env:USERPROFILE\DESKTOP\secedit_output.txt"
+#$outputFile = "$env:USERPROFILE\DESKTOP\secedit_output.txt"
+$outputFile = "$env:temp\secedit_output.txt"
 $seceditContent = Get-Content $outputFile
 Clear-Host
 $index = @("1.1.1","1.1.2","1.1.3","1.1.4","1.1.5","1.1.6","1.2.1","1.2.2","1.2.3","1.2.4")
