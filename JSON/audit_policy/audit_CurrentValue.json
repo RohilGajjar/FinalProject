@@ -1,0 +1,23 @@
+﻿[
+    "Audit Credential Validation is not set to Success and Failure(No Auditing)",
+    "Audit Credential Validation is not set to Success and Failure(No Auditing)",
+    "Audit User Group Management is set to Success and Failure ",
+    "Audit Process Creation is not set to Include success.",
+    "Audit Account Lockout is not set to include Failure.",
+    "Audit Group Membership is not set to include Success",
+    "Audit Logoff is set to include Success",
+    "Audit Logon is set to Success and Failure",
+    "Audit Special Logon is set to include Success",
+    "Audit Detailed File Share is not set to Include Failure",
+    "Audit File Share is not set to Success and Failure",
+    "Audit Other Object Access Events is not set to Success and Failure",
+    "Audit Removable Storage is not set to Success and Failure",
+    "Audit Audit Policy Change is set to include Success ",
+    "Audit Authentication Policy Change is set to include Success",
+    "Audit Authorization Policy Change is not set to include Success",
+    "Audit Sensitive Privilege Use is not set to Success and Failure ",
+    " Audit System Integrity is set to Success and Failure",
+    "Error reading the setting value. ",
+    "The setting fAllowUnsolicited is not configured.",
+    "The setting is not configured."
+]
