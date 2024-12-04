@@ -1,0 +1,7 @@
+﻿[
+    "2.2.2 Access this computer from the network is set to Administrators, Remote Desktop Users. ",
+    "2.2.4 Adjust memory quotas for a process is not set to Administrators, LOCAL SERVICE, NETWORK SERVICE",
+    "2.2.5 Allow log on locally is not set to Administrators,Users",
+    "2.2.6 Allow log on through Remote Desktop Services is not set to Administrators, Remote Desktop Users",
+    "Create Symbolic links benchmarks is not in its recommended state"
+]

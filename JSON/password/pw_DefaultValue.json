@@ -1,0 +1,13 @@
+﻿[
+    "24 passwords remembered on domain members. 0 passwords remembered on stand-alone workstations.",
+    "42 days",
+    "1 days on domain-.members. 0 days on stand-alone workstations",
+    "7 characters on domain members. 0 characters on stand-alone servers.",
+    "Enabled on domain members. Disabled on stand-alone servers",
+    "Disabled. (The Minimum password length may be configured to a maximum of 14 characters.)",
+    "Disabled",
+    "None, because this policy setting only has meaning when an Account lockout threshold is specified. When an Account lockout threshold is configured, Windows automatically suggests a value of 30 minutes.",
+    "0 failed logon attempts",
+    "Disabled. (The built-in Administrator account is not subject to the account lockout policy.)",
+    "None, because this policy setting only has meaning when an Account lockout threshold is specified. When an Account lockout threshold is configured, Windows automatically suggests a value of 30 minutes."
+]

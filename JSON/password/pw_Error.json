@@ -1,0 +1,10 @@
+﻿[
+    "1.1.1 Enforce password history value not found in security policy",
+    "1.1.3 Minimum Password age value setting was not found in the security policy",
+    "1.1.4 Minimum Password length value was not found in security policy",
+    "1.1.5 Password Complexity Value was not found in security policy",
+    "1.2.1 Account Lockout Duration Value was not found in security policy",
+    "1.2.2 Value was not found in security policy",
+    "1.2.3 Admin Account Lockout Status was not found in Security policy",
+    "1.2.4 Reset Account Lockout Counter Value was not found in security policy"
+]

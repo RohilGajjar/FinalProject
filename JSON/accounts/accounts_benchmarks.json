@@ -1,0 +1,9 @@
+﻿[
+    "Block Microsoft Accounts",
+    "Guest account status",
+    "Limit Local Account use of Blank Password to console logon",
+    "Rename Administrator Account",
+    "Rename Guest Account",
+    "Audit: Shut down system immediately if unable to log security audits",
+    "User Account Control: Admin Approval Mode for the Built-in Administrator account"
+]

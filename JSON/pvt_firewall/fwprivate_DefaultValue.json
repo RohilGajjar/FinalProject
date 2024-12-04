@@ -1,0 +1,10 @@
+﻿[
+    "On",
+    "Block",
+    "Allow",
+    "No",
+    "%SystemRoot%\\System32\\logfiles\\firewall\\pfirewall.log ",
+    "4096KB",
+    "No",
+    "No"
+]

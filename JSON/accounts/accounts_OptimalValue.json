@@ -1,0 +1,9 @@
+﻿[
+    "Users can\u0027t add or log on with Microsoft accounts",
+    "Disabled",
+    "Enabled",
+    "avoid names that denote administrative or elevated access accounts. Be sure to also change the \r\ndefault description for the local administrator (through the Computer Management console)",
+    "rename this account to something that does not indicate its purpose. Even if you disable this account, which is recommended, ensure that you rename it for added security.",
+    "Disabled",
+    "Enabled"
+]

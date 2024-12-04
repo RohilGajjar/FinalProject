@@ -1,0 +1,10 @@
+﻿[
+    "On",
+    "Block",
+    "Allow",
+    "No",
+    "%systemroot%\\system32\\LogFiles\\Firewall\\pfirewall.log",
+    "16,384KB or Greater",
+    "Yes",
+    "Yes"
+]

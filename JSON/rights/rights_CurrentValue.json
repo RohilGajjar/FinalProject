@@ -1,0 +1,18 @@
+﻿[
+    "",
+    "Access Credential Manager as a trusted caller is set to No One ",
+    "Access this computer from the network is set to Administrators, Remote Desktop Users. ",
+    "Act as part of the operating system is set to No One",
+    "Adjust memory quotas for a process is not set to Administrators, LOCAL SERVICE, NETWORK SERVICE",
+    "Allow log on locally is not set to Administrators,Users",
+    "Allow log on through Remote Desktop Services is not set to Administrators, Remote Desktop Users",
+    "Back up files and directories is set to Administrators",
+    "Change the system time is set to Administrators, LOCAL SERVICE",
+    "Change the time zone is set to Administrators, LOCAL SERVICE, Users",
+    "Create a pagefile is set to Administrator",
+    "Create a token object is set to No One",
+    "Create global objects is set to Administrators,LOCAL SERVICE, NETWORK SERVICE, SERVICE",
+    "Create permanent shared objects is set to No One",
+    "Create Symbolic links benchmarks is not in its recommended state",
+    "Debug programs is set to Administrators"
+]

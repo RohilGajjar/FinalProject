@@ -1,0 +1,10 @@
+﻿[
+    "Firewall State",
+    "Inbound Connections",
+    "Outbound Connections",
+    "Display a notification",
+    "Log File Name",
+    "Log max size in KB",
+    "Log dropped packets",
+    "Log allowed packets"
+]
