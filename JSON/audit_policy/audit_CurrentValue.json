@@ -16,7 +16,7 @@
     "Audit Authentication Policy Change is set to include Success",
     "Audit Authorization Policy Change is not set to include Success",
     "Audit Sensitive Privilege Use is not set to Success and Failure ",
-    " Audit System Integrity is set to Success and Failure",
+    "Audit System Integrity is set to Success and Failure",
     "Error reading the setting value. ",
     "The setting fAllowUnsolicited is not configured.",
     "The setting is not configured."
