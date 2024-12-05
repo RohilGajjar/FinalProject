@@ -49,6 +49,8 @@ class App(customtkinter.CTk):
         self.appearance_mode_optionemenu = customtkinter.CTkOptionMenu(self.sidebar_frame, values=["Light", "Dark", "System"],
                                                                        command=self.change_appearance_mode_event)
         self.appearance_mode_optionemenu.grid(row=6, column=0, padx=20, pady=(10, 10))
+        self.title_bg_color="#242424"
+        self.data_bg_color="#333333"
        
         self.textbox = customtkinter.CTkFrame(self)
         self.textbox.grid(row=0, column=1,columnspan=2, padx=(20, 20), pady=(20, 20), sticky="nsew")
@@ -239,36 +241,36 @@ class App(customtkinter.CTk):
             self.data_default=[]
             self.data_optimal=[]
             self.data_error=[]
-            self.index_title=customtkinter.CTkLabel(self.data_table, text="Index",bg_color="#242424",corner_radius=10,wraplength=60 )
+            self.index_title=customtkinter.CTkLabel(self.data_table, text="Index",bg_color=self.title_bg_color,corner_radius=10,wraplength=60 )
             self.index_title.grid(row=0,column=0,padx=3,pady=3,sticky="nsew")
-            self.benchmark_title=customtkinter.CTkLabel(self.data_table, text="Benchmark",bg_color="#242424",corner_radius=10,wraplength=60 )
+            self.benchmark_title=customtkinter.CTkLabel(self.data_table, text="Benchmark",bg_color=self.title_bg_color,corner_radius=10,wraplength=60 )
             self.benchmark_title.grid(row=0,column=1,padx=3,pady=3,sticky="nsew")
-            self.current_title=customtkinter.CTkLabel(self.data_table, text="Current Value",bg_color="#242424",corner_radius=10,wraplength=60 )
+            self.current_title=customtkinter.CTkLabel(self.data_table, text="Current Value",bg_color=self.title_bg_color,corner_radius=10,wraplength=60 )
             self.current_title.grid(row=0,column=2,padx=3,pady=3,sticky="nsew")
-            self.default_title=customtkinter.CTkLabel(self.data_table, text="Default Value",bg_color="#242424",corner_radius=10,wraplength=60 )
+            self.default_title=customtkinter.CTkLabel(self.data_table, text="Default Value",bg_color=self.title_bg_color,corner_radius=10,wraplength=60 )
             self.default_title.grid(row=0,column=3,padx=3,pady=3,sticky="nsew")
-            self.optimal_title=customtkinter.CTkLabel(self.data_table, text="Optimal Value",bg_color="#242424",corner_radius=10,wraplength=60 )
+            self.optimal_title=customtkinter.CTkLabel(self.data_table, text="Optimal Value",bg_color=self.title_bg_color,corner_radius=10,wraplength=60 )
             self.optimal_title.grid(row=0,column=4,padx=3,pady=3,sticky="nsew")
              # Iterate through all three lists using the same index
             for i in range(min(len(index_data), len(benchmark_data))):  # Ensure we don't exceed any list's length
                 # Format: "Benchmark Value => Description => Additional Value"
-                index_label = customtkinter.CTkLabel(self.data_table, text=index_data[i],bg_color="#333333",corner_radius=10,wraplength=60 )
+                index_label = customtkinter.CTkLabel(self.data_table, text=index_data[i],bg_color=self.data_bg_color,corner_radius=10,wraplength=60 )
                 index_label.grid(row=i+1,column=0,padx=3,pady=3,sticky="nsew")  # Position the label in column 0
                 self.data_index.append(index_label)  # Add the label to the index list
 
-                benchmark_label = customtkinter.CTkLabel(self.data_table, text=benchmark_data[i],bg_color="#333333",corner_radius=5,wraplength=150)
+                benchmark_label = customtkinter.CTkLabel(self.data_table, text=benchmark_data[i],bg_color=self.data_bg_color,corner_radius=5,wraplength=150)
                 benchmark_label.grid(row=i+1,column=1,padx=3,pady=3,stick="nsew")  # Position the label in column 1
                 self.data_benchmark.append(benchmark_label) 
 
-                current_label = customtkinter.CTkLabel(self.data_table, text=current_data[i],bg_color="#333333",corner_radius=5,wraplength=150)
+                current_label = customtkinter.CTkLabel(self.data_table, text=current_data[i],bg_color=self.data_bg_color,corner_radius=5,wraplength=150)
                 current_label.grid(row=i+1,column=2,padx=3,pady=3,stick="nsew")  # Position the label in column 1
                 self.data_default.append(current_label) 
 
-                default_label = customtkinter.CTkLabel(self.data_table, text=default_data[i],bg_color="#333333",corner_radius=5,wraplength=150)
+                default_label = customtkinter.CTkLabel(self.data_table, text=default_data[i],bg_color=self.data_bg_color,corner_radius=5,wraplength=150)
                 default_label.grid(row=i+1,column=3,padx=3,pady=3,stick="nsew")  # Position the label in column 1
                 self.data_default.append(default_label) 
 
-                optimal_label = customtkinter.CTkLabel(self.data_table, text=optimal_data[i],bg_color="#333333",corner_radius=5,wraplength=50)
+                optimal_label = customtkinter.CTkLabel(self.data_table, text=optimal_data[i],bg_color=self.data_bg_color,corner_radius=5,wraplength=50)
                 optimal_label.grid(row=i+1,column=4,padx=3,pady=3,stick="nsew")  # Position the label in column 1
                 self.data_default.append(optimal_label) 
 
@@ -291,7 +293,7 @@ class App(customtkinter.CTk):
             with open(error_path, "r", encoding="utf-8-sig") as file:
                 error_data=json.load(file)
             for i in range(len(error_data)):
-                error_label = customtkinter.CTkLabel(self.scrollable_frame, text=error_data[i],bg_color="#333333",corner_radius=10,wraplength=350)
+                error_label = customtkinter.CTkLabel(self.scrollable_frame, text=error_data[i],bg_color=self.data_bg_color,corner_radius=50,wraplength=350)
                 error_label.grid(row=i,column=0,padx=3,pady=3,sticky="nsew")  # Position the label in column 0
                 self.data_error.append(error_label)  # Add the label to the index list
 
@@ -321,6 +323,10 @@ class App(customtkinter.CTk):
 
     def change_appearance_mode_event(self, new_appearance_mode: str):
         customtkinter.set_appearance_mode(new_appearance_mode)
+        if(new_appearance_mode=="Light"):
+            self.title_bg_color="#c7c7c7"
+            self.data_bg_color="#ebebeb"
+            self.retrive_data()
 
     def change_scaling_event(self, new_scaling: str):
         new_scaling_float = int(new_scaling.replace("%", "")) / 100
