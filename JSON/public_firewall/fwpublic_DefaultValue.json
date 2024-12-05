@@ -1,12 +1,12 @@
 ﻿[
-    "On",
-    "Block",
-    "Allow",
-    "No",
-    "Yes (Firewall rules created by the administrators will be applied)",
-    "Yes (Local connection security rules created by administrators will be applied)",
-    "%SystemRoot%\\System32\\logfiles\\firewall\\pfirewall.log",
-    "4096 KB",
-    "No (Information about dropped packets will not be recorded in the firewall log file)",
-    "No"
+"On",
+"Block",
+"Allow",
+"No",
+"Yes (Firewall rules created by the administrators will be applied)",
+"Yes (Local connection security rules created by administrators will be applied)",
+"%SystemRoot%\\System32\\logfiles\\firewall\\pfirewall.log",
+"4096 KB",
+"No (Information about dropped packets will not be recorded in the firewall log file)",
+"No"
 ]

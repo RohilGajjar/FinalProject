@@ -1,6 +1,7 @@
 ﻿[
     "Inbound connections to Public profile are NotConfigured ",
     "Display a notification is not set to No",
+    "Apply local firewall rules is set to NotConfigured",
     "Logging size is set to 4096",
-    "Logging: Log dropped packets is set to No"
+    "Logging: Log allowed packets is set to No"
 ]
