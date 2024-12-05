@@ -2,6 +2,8 @@ import customtkinter as ctk
 import tkinter.messagebox as tkmb
 import sqlite3
 import bcrypt
+import subprocess
+
 
 # Selecting GUI theme - dark, light , system (for system default)
 ctk.set_appearance_mode("dark")
@@ -31,6 +33,9 @@ def login():
             hashed_password = result[0]
             if bcrypt.checkpw(password.encode('utf-8'), hashed_password):
                 tkmb.showinfo("Login Successful", "You have logged in successfully!")
+                subprocess.run(["python","project.py"])
+                app.destroy()
+                
             else:
                 tkmb.showwarning("Invalid Password", "Incorrect password. Please try again.")
         else:
@@ -102,13 +107,13 @@ def signup():
     signup_window.mainloop()
 
 
-label = ctk.CTkLabel(app, text="This is the main UI page")
+label = ctk.CTkLabel(app, text="SafeSys Analyzer",font=("Arial",30))
 label.pack(pady=20)
 
 frame = ctk.CTkFrame(master=app)
 frame.pack(pady=20, padx=40, fill='both', expand=True)
 
-label = ctk.CTkLabel(master=frame, text='Modern Login System UI')
+label = ctk.CTkLabel(master=frame, text='Log into your account')
 label.pack(pady=12, padx=10)
 
 user_entry = ctk.CTkEntry(master=frame, placeholder_text="Username")
@@ -119,9 +124,6 @@ user_pass.pack(pady=12, padx=10)
 
 button = ctk.CTkButton(master=frame, text='Login', command=login)
 button.pack(pady=12, padx=10)
-
-# checkbox = ctk.CTkCheckBox(master=frame, text='Remember Me')
-# checkbox.pack(pady=12, padx=10)
 
 logup = ctk.CTkButton(master=frame, text='Create New Account', command=signup)
 logup.pack(pady=12, padx=10)
