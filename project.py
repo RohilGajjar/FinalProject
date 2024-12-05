@@ -38,12 +38,7 @@ class App(customtkinter.CTk):
         image_label.grid(row=0, column=0, padx=10, pady=10)
         self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="SafeSys Analyzer", font=customtkinter.CTkFont(size=20, weight="bold"))
         self.logo_label.grid(row=1, column=0, padx=20, pady=(10, 10))
-        # self.sidebar_button_1 = customtkinter.CTkButton(self.sidebar_frame, command=self.sidebar_button_event, text="Home")
-        # self.sidebar_button_1.grid(row=1, column=0, padx=20, pady=10)
-        # self.sidebar_button_2 = customtkinter.CTkButton(self.sidebar_frame, command=self.sidebar_button_event, text="About")
-        # self.sidebar_button_2.grid(row=2, column=0, padx=20, pady=10)
-        # self.sidebar_button_3 = customtkinter.CTkButton(self.sidebar_frame, command=self.sidebar_button_event, text="Help")
-        # self.sidebar_button_3.grid(row=3, column=0, padx=20, pady=10)
+
         self.appearance_mode_label = customtkinter.CTkLabel(self.sidebar_frame, text="Appearance Mode:", anchor="w")
         self.appearance_mode_label.grid(row=5, column=0, padx=20, pady=(10, 0))
         self.appearance_mode_optionemenu = customtkinter.CTkOptionMenu(self.sidebar_frame, values=["Light", "Dark", "System"],
@@ -60,55 +55,35 @@ class App(customtkinter.CTk):
         self.textbox_description.grid(row=1,column=0,padx=(10,0),pady=(5,0),sticky="nw")
 
         self.radio_var = tkinter.IntVar(value=0)  # Default selection value is 0
+        self.btn_display=customtkinter.CTkFrame(self.textbox)
+        self.btn_display.grid(row=2, column=0, pady=10, padx=10, sticky="nsew")
+        self.btn_display.grid_columnconfigure(0,weight=1)
+        self.btn_display.grid_columnconfigure(1,weight=1)
+        self.accounts_button = customtkinter.CTkRadioButton(self.btn_display, text="Accounts", variable=self.radio_var, value=0)
+        self.accounts_button.grid(row=0, column=0, pady=10, padx=10, sticky="w")
 
-        self.accounts_button = customtkinter.CTkRadioButton(self.textbox, text="Accounts", variable=self.radio_var, value=0)
-        self.accounts_button.grid(row=2, column=0, pady=10, padx=10, sticky="w")
+        self.audit_button = customtkinter.CTkRadioButton(self.btn_display, text="Audit Policy", variable=self.radio_var, value=1)
+        self.audit_button.grid(row=0, column=1, pady=10, sticky="w")
 
-        self.audit_button = customtkinter.CTkRadioButton(self.textbox, text="Audit Policy", variable=self.radio_var, value=1)
-        self.audit_button.grid(row=2, column=1, pady=10, sticky="w")
+        self.password_button = customtkinter.CTkRadioButton(self.btn_display, text="Password", variable=self.radio_var, value=2)
+        self.password_button.grid(row=1, column=0, pady=10, padx=10, sticky="w")
 
-        self.password_button = customtkinter.CTkRadioButton(self.textbox, text="Password", variable=self.radio_var, value=2)
-        self.password_button.grid(row=3, column=0, pady=10, padx=10, sticky="w")
+        self.pub_firewall_button = customtkinter.CTkRadioButton(self.btn_display, text="Public Firewall", variable=self.radio_var, value=3)
+        self.pub_firewall_button.grid(row=1, column=1, pady=10, sticky="w")
 
-        self.pub_firewall_button = customtkinter.CTkRadioButton(self.textbox, text="Public Firewall", variable=self.radio_var, value=3)
-        self.pub_firewall_button.grid(row=3, column=1, pady=10, sticky="w")
+        self.pvt_firewall_button = customtkinter.CTkRadioButton(self.btn_display, text="Private Firewall", variable=self.radio_var, value=4)
+        self.pvt_firewall_button.grid(row=2, column=0, pady=10, padx=10, sticky="w")
 
-        self.pvt_firewall_button = customtkinter.CTkRadioButton(self.textbox, text="Private Firewall", variable=self.radio_var, value=4)
-        self.pvt_firewall_button.grid(row=4, column=0, pady=10, padx=10, sticky="w")
+        self.rights_button = customtkinter.CTkRadioButton(self.btn_display, text="Rights", variable=self.radio_var, value=5)
+        self.rights_button.grid(row=2, column=1, pady=10, sticky="w")
 
-        self.rights_button = customtkinter.CTkRadioButton(self.textbox, text="Rights", variable=self.radio_var, value=5)
-        self.rights_button.grid(row=4, column=1, pady=10, sticky="w")
-
-        self.run_btn=customtkinter.CTkButton(self.textbox,text="Run",width=150,command=self.retrive_data)
-        self.run_btn.grid(row=5, column=0, padx=10, pady=15, sticky="w")
-
-        # self.data_label = customtkinter.CTkLabel(self.textbox, text="", justify="left")
-        # self.data_label.grid(row=6, column=0, padx=10, pady=10, sticky="w")
-
-        # self.tabview = customtkinter.CTkTabview(self, width=250)
-        # self.tabview.grid(row=0, column=3, columnspan=2, padx=(20, 20), pady=(20, 0),sticky="nsew")
-        # self.tabview.add("Accounts")
-        # self.tabview.add("Audit Policy")
-        # self.tabview.add("Password")
-        # self.tabview.add("Public Firewall")
-        # self.tabview.add("Private Firewall")
-        # self.tabview.add("Rights")
-        # self.tabview.tab("Accounts").grid_columnconfigure(0, weight=1)  # configure grid of individual tabs
-        # self.tabview.tab("Audit Policy").grid_columnconfigure(0, weight=1)
-        # self.tabview.tab("Password").grid_columnconfigure(0, weight=1)
-        # self.tabview.tab("Public Firewall").grid_columnconfigure(0, weight=1)
-        # self.tabview.tab("Private Firewall").grid_columnconfigure(0, weight=1)
-        # self.tabview.tab("Rights").grid_columnconfigure(0, weight=1)
-        # self.tabview1=customtkinter.CTkScrollableFrame(self.tabview.tab("Password"))
-        # self.tabview1.grid(padx=0,pady=0,sticky="nsew")
-        # self.tabview1_label=customtkinter.CTkLabel(self.tabview1,justify="left")
-        # self.tabview1_label.grid(padx=0,pady=0,sticky="nsew")
-        # self.password_polocies()
+        self.run_btn=customtkinter.CTkButton(self.btn_display,text="Run",width=150,command=self.retrive_data)
+        self.run_btn.grid(row=3, column=0, padx=10, pady=15, sticky="w")
    
         self.scrollable_frame = customtkinter.CTkScrollableFrame(self, label_text="Vulnerabilities")
         self.scrollable_frame.grid(row=0, column=3,columnspan=2, padx=(20, 20), pady=(20, 20), sticky="nsew")
         self.scrollable_frame.grid_columnconfigure(0, weight=1)
-        self.load_image_in_scrollable_frame("images/no_data_found_img.png")
+        self.load_image_in_scrollable_frame(self.scrollable_frame,"images/no_data_found_img.png")
 
         self.data_table = customtkinter.CTkScrollableFrame(self)
         self.data_table.grid(row=1, column=1,rowspan=2,columnspan=3, padx=(20, 20), pady=(20, 20), sticky="nsew")
@@ -140,34 +115,10 @@ class App(customtkinter.CTk):
         self.download_btn.grid(row=7, column=0, padx=(50,20), pady=30)
   
         self.appearance_mode_optionemenu.set("Dark")
-        self.update_wrap_length()
-    # def password_polocies(self):
-    #     try:
-    #         # Load the JSON file (replace with your actual JSON file path)
-    #         with open("./JSON/audit_policy/audit_index.json", "r") as file:
-    #             data1 = json.load(file)
-    #         with open("./JSON/audit_policy/audit_benchmark.json", "r") as file:
-    #             data2=json.load(file)
-    #         combined_data = []
-
-    #         # Iterate through all three lists using the same index
-    #         for i in range(min(len(data1), len(data2))):  # Ensure we don't exceed any list's length
-    #             # Format: "Benchmark Value => Description => Additional Value"
-    #             combined_entry = f"{data1[i]} {data2[i]}\n"
-    #             combined_data.append(combined_entry)  # Add to the combined data list
-
-    #         # Join all combined entries into a single string separated by newlines
-    #         formatted_data = "\n".join(combined_data)
-    #         self.tabview1_label.configure(text=formatted_data)
-    #     except FileNotFoundError:
-    #         messagebox.showerror("Error", "JSON file not found!")
-    #     except json.JSONDecodeError:
-    #         messagebox.showerror("Error", "Invalid JSON format!")
-    #     except Exception as e:
-    #         tkinter.messagebox.showerror("Error", f"An unexpected error occurred: {str(e)}")
-    
+        self.update_wrap_length()    
     def retrive_data(self):
-        self.clear_frame()
+        self.clear_frame(self.data_table)
+        self.clear_frame(self.scrollable_frame)
         select=(self.radio_var.get())
         if(select==0):
             index_path="JSON/accounts/accounts_index.json"
@@ -227,14 +178,6 @@ class App(customtkinter.CTk):
                 default_data=json.load(file)
             with open(optimal_path, "r", encoding="utf-8-sig") as file:
                 optimal_data=json.load(file)
-            # Format the list into a string, separating items by newlines
-            # with open("./JSON/audit_policy/audit_CurrentValue.json", "r") as file:  # Load the third file
-            #     data3 = json.load(file)  # Additional values
-
-        # Initialize a list to hold the formatted output
-            # combined_data = []
-            # self.data_table=customtkinter.CTkFrame(self.textbox)
-            # self.data_table.grid(padx=10,pady=10,sticky="nsew")
             self.data_index=[]
             self.data_benchmark=[]
             self.data_current=[]
@@ -273,20 +216,12 @@ class App(customtkinter.CTk):
                 optimal_label = customtkinter.CTkLabel(self.data_table, text=optimal_data[i],bg_color=self.data_bg_color,corner_radius=5,wraplength=120)
                 optimal_label.grid(row=i+1,column=4,padx=3,pady=3,stick="nsew")  # Position the label in column 1
                 self.data_default.append(optimal_label) 
-
-
-                # combined_entry = f"{data1[i]} {data2[i]} => \n"
-                # combined_data.append(combined_entry)  # Add to the combined data list
-
-            #  # Join all combined entries into a single string separated by newlines
-            # formatted_data = "\n".join(combined_data)
-
-            # # Display the formatted list below the Run button
-            # self.data_label.configure(text=formatted_data)
         except FileNotFoundError:
-            messagebox.showerror("Error", "JSON file not found!")
+            # messagebox.showerror("Error", "JSON file not found!")
+            self.load_image_in_scrollable_frame(self.data_table,"images/no_data_found_img.png")
         except json.JSONDecodeError:
-            messagebox.showerror("Error", "Invalid JSON format!")
+            # messagebox.showerror("Error", "Invalid JSON format!")
+            self.load_image_in_scrollable_frame(self.data_table,"images/no_data_found_img.png")
         except Exception as e:
             tkinter.messagebox.showerror("Error", f"An unexpected error occurred: {str(e)}")
         try:
@@ -298,16 +233,16 @@ class App(customtkinter.CTk):
                 self.data_error.append(error_label)  # Add the label to the index list
         except Exception as e:
             self.load_image_in_scrollable_frame("images/no_data_found_img.png")
-    def clear_frame(self):
-        for widgets in self.scrollable_frame.winfo_children():
+    def clear_frame(self,master):
+        for widgets in master.winfo_children():
             widgets.destroy()
-    def load_image_in_scrollable_frame(self, image_path):
+    def load_image_in_scrollable_frame(self,master,img_path):
         """Load and display an image inside the scrollable frame."""
-        image = Image.open(image_path)
+        image = Image.open(img_path)
         image = image.resize((300, 300)) 
         image_tk = ImageTk.PhotoImage(image)
 
-        image_label = customtkinter.CTkLabel(self.scrollable_frame, image=image_tk, text="")
+        image_label = customtkinter.CTkLabel(master, image=image_tk, text="")
         image_label.image = image_tk
         image_label.grid(row=0, column=0, padx=10, pady=20)
 
@@ -325,7 +260,10 @@ class App(customtkinter.CTk):
         if(new_appearance_mode=="Light"):
             self.title_bg_color="#c7c7c7"
             self.data_bg_color="#ebebeb"
-            self.retrive_data()
+        else:
+            self.title_bg_color="#242424"
+            self.data_bg_color="#333333"
+        self.retrive_data()
 
     def change_scaling_event(self, new_scaling: str):
         new_scaling_float = int(new_scaling.replace("%", "")) / 100
