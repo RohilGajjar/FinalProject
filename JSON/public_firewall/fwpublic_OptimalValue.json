@@ -1,12 +1,12 @@
 ﻿[
-    "On",
-    "Block",
-    "Allow",
-    "No",
-    "No",
-    "No",
-    "%SystemRoot%\\System32\\logfiles\\firewall\\Publicfw.log",
-    "\u003e=16,384 KB",
-    "Yes",
-    "Yes"
+"On",
+"Block",
+"Allow",
+"No",
+"No",
+"No",
+"%SystemRoot%\\System32\\logfiles\\firewall\\Publicfw.log",
+"16,384 KB",
+"Yes",
+"Yes"
 ]

@@ -36,7 +36,7 @@ class App(customtkinter.CTk):
         image_label = customtkinter.CTkLabel(self.sidebar_frame, image=image_tk, text="")
         image_label.image = image_tk
         image_label.grid(row=0, column=0, padx=10, pady=10)
-        self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="Safe Sys Analyzer", font=customtkinter.CTkFont(size=20, weight="bold"))
+        self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="SafeSys Analyzer", font=customtkinter.CTkFont(size=20, weight="bold"))
         self.logo_label.grid(row=1, column=0, padx=20, pady=(10, 10))
         # self.sidebar_button_1 = customtkinter.CTkButton(self.sidebar_frame, command=self.sidebar_button_event, text="Home")
         # self.sidebar_button_1.grid(row=1, column=0, padx=20, pady=10)
@@ -170,62 +170,62 @@ class App(customtkinter.CTk):
         self.clear_frame()
         select=(self.radio_var.get())
         if(select==0):
-            index_path="./JSON/accounts/accounts_index.json"
-            benchmark_path="./JSON/accounts/accounts_benchmark.json"
-            current_path="./JSON/accounts/accounts_CurrentValue.json"
-            default_path="./JSON/accounts/accounts_DefaultValue.json"
-            optimal_path="./JSON/accounts/accounts_OptimalValue.json"
-            error_path="./JSON/accounts/accounts_error.json"
+            index_path="JSON/accounts/accounts_index.json"
+            benchmark_path="JSON/accounts/accounts_benchmark.json"
+            current_path="JSON/accounts/accounts_CurrentValue.json"
+            default_path="JSON/accounts/accounts_DefaultValue.json"
+            optimal_path="JSON/accounts/accounts_OptimalValue.json"
+            error_path="JSON/accounts/accounts_error.json"
         elif(select==1):
-            index_path="./JSON/audit_policy/audit_index.json"
-            benchmark_path="./JSON/audit_policy/audit_benchmark.json"
-            current_path="./JSON/audit_policy/audit_CurrentValue.json"
-            default_path="./JSON/audit_policy/audit_DefaultValue.json"
-            optimal_path="./JSON/audit_policy/audit_OptimalValue.json"
-            error_path="./JSON/audit_policy/audit_error.json"
+            index_path="JSON/audit_policy/audit_index.json"
+            benchmark_path="JSON/audit_policy/audit_benchmark.json"
+            current_path="JSON/audit_policy/audit_CurrentValue.json"
+            default_path="JSON/audit_policy/audit_DefaultValue.json"
+            optimal_path="JSON/audit_policy/audit_OptimalValue.json"
+            error_path="JSON/audit_policy/audit_error.json"
         elif(select==2):
-            index_path="./JSON/password/pw_index.json"
-            benchmark_path="./JSON/password/pw_benchmark.json"
-            current_path="./JSON/password/pw_CurrentValue.json"
-            default_path="./JSON/password/pw_DefaultValue.json"
-            optimal_path="./JSON/password/pw_OptimalValue.json"
-            error_path="./JSON/password/pw_error.json"
+            index_path="JSON/password/pw_index.json"
+            benchmark_path="JSON/password/pw_benchmark.json"
+            current_path="JSON/password/pw_CurrentValue.json"
+            default_path="JSON/password/pw_DefaultValue.json"
+            optimal_path="JSON/password/pw_OptimalValue.json"
+            error_path="JSON/password/pw_error.json"
         elif(select==3):
-            index_path="./JSON/public_firewall/fwpublic_profile.json"
-            benchmark_path="./JSON/public_firewall/fwpublic_benchmark.json"
-            current_path="./JSON/public_firewall/fwpublic_CurrentValue.json"
-            default_path="./JSON/public_firewall/fwpublic_DefaultValue.json"
-            optimal_path="./JSON/public_firewall/fwpublic_OptimalValue.json"
-            error_path="./JSON/public_firewall/fwpublic_error.json"
+            index_path="JSON/public_firewall/fwpublic_profile.json"
+            benchmark_path="JSON/public_firewall/fwpublic_benchmarks.json"
+            current_path="JSON/public_firewall/fwpublic_CurrentValue.json"
+            default_path="JSON/public_firewall/fwpublic_DefaultValue.json"
+            optimal_path="JSON/public_firewall/fwpublic_OptimalValue.json"
+            error_path="JSON/public_firewall/fwpublic_err.json"
         elif(select==4):
-            index_path="./JSON/pvt_firewall/fwprivate_index.json"
-            benchmark_path="./JSON/pvt_firewall/fwprivate_benchmark.json"
-            current_path="./JSON/pvt_firewall/fwprivate_CurrentValue.json"
-            default_path="./JSON/pvt_firewall/fwprivate_DefaultValue.json"
-            optimal_path="./JSON/pvt_firewall/fwprivate_OptimalValue.json"
-            error_path="./JSON/pvt_firewall/fwprivate_error.json"
+            index_path="JSON/pvt_firewall/fwprivate_profile.json"
+            benchmark_path="JSON/pvt_firewall/fwprivate_benchmark.json"
+            current_path="JSON/pvt_firewall/fwprivate_CurrentValue.json"
+            default_path="JSON/pvt_firewall/fwprivate_DefaultValue.json"
+            optimal_path="JSON/pvt_firewall/fwprivate_OptimalValue.json"
+            error_path="JSON/pvt_firewall/fwprivate_error.json"
         elif(select==5):
-            index_path="./JSON/rights/rights_index.json"
-            benchmark_path="./JSON/rights/rights_benchmark.json"
-            current_path="./JSON/rights/rights_CurrentValue.json"
-            default_path="./JSON/rights/rights_DefaultValue.json"
-            optimal_path="./JSON/rights/rights_OptimalValue.json"
-            error_path="./JSON/rights/rights_error.json"
+            index_path="JSON/rights/rights_index.json"
+            benchmark_path="JSON/rights/rights_benchmark.json"
+            current_path="JSON/rights/rights_CurrentValue.json"
+            default_path="JSON/rights/rights_DefaultValue.json"
+            optimal_path="JSON/rights/rights_OptimalValue.json"
+            error_path="JSON/rights/rights_error.json"
         else:
             return
 
 
         try:
             # Load the JSON file (replace with your actual JSON file path)
-            with open(index_path, "r") as file:
+            with open(index_path, "r", encoding="utf-8-sig") as file:
                 index_data = json.load(file)
-            with open(benchmark_path, "r") as file:
+            with open(benchmark_path, "r", encoding="utf-8-sig") as file:
                 benchmark_data=json.load(file)
             with open(current_path, "r", encoding="utf-8-sig") as file:
                 current_data=json.load(file)
-            with open(default_path, "r") as file:
+            with open(default_path, "r", encoding="utf-8-sig") as file:
                 default_data=json.load(file)
-            with open(optimal_path, "r") as file:
+            with open(optimal_path, "r", encoding="utf-8-sig") as file:
                 optimal_data=json.load(file)
             # Format the list into a string, separating items by newlines
             # with open("./JSON/audit_policy/audit_CurrentValue.json", "r") as file:  # Load the third file
@@ -262,15 +262,15 @@ class App(customtkinter.CTk):
                 benchmark_label.grid(row=i+1,column=1,padx=3,pady=3,stick="nsew")  # Position the label in column 1
                 self.data_benchmark.append(benchmark_label) 
 
-                current_label = customtkinter.CTkLabel(self.data_table, text=current_data[i],bg_color=self.data_bg_color,corner_radius=5,wraplength=150)
+                current_label = customtkinter.CTkLabel(self.data_table, text=current_data[i],bg_color=self.data_bg_color,corner_radius=5,wraplength=120)
                 current_label.grid(row=i+1,column=2,padx=3,pady=3,stick="nsew")  # Position the label in column 1
                 self.data_default.append(current_label) 
 
-                default_label = customtkinter.CTkLabel(self.data_table, text=default_data[i],bg_color=self.data_bg_color,corner_radius=5,wraplength=150)
+                default_label = customtkinter.CTkLabel(self.data_table, text=default_data[i],bg_color=self.data_bg_color,corner_radius=5,wraplength=120)
                 default_label.grid(row=i+1,column=3,padx=3,pady=3,stick="nsew")  # Position the label in column 1
                 self.data_default.append(default_label) 
 
-                optimal_label = customtkinter.CTkLabel(self.data_table, text=optimal_data[i],bg_color=self.data_bg_color,corner_radius=5,wraplength=50)
+                optimal_label = customtkinter.CTkLabel(self.data_table, text=optimal_data[i],bg_color=self.data_bg_color,corner_radius=5,wraplength=120)
                 optimal_label.grid(row=i+1,column=4,padx=3,pady=3,stick="nsew")  # Position the label in column 1
                 self.data_default.append(optimal_label) 
 
@@ -296,7 +296,6 @@ class App(customtkinter.CTk):
                 error_label = customtkinter.CTkLabel(self.scrollable_frame, text=error_data[i],bg_color=self.data_bg_color,corner_radius=50,wraplength=350)
                 error_label.grid(row=i,column=0,padx=3,pady=3,sticky="nsew")  # Position the label in column 0
                 self.data_error.append(error_label)  # Add the label to the index list
-
         except Exception as e:
             self.load_image_in_scrollable_frame("images/no_data_found_img.png")
     def clear_frame(self):

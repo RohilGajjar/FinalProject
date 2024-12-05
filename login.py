@@ -120,8 +120,8 @@ user_pass.pack(pady=12, padx=10)
 button = ctk.CTkButton(master=frame, text='Login', command=login)
 button.pack(pady=12, padx=10)
 
-checkbox = ctk.CTkCheckBox(master=frame, text='Remember Me')
-checkbox.pack(pady=12, padx=10)
+# checkbox = ctk.CTkCheckBox(master=frame, text='Remember Me')
+# checkbox.pack(pady=12, padx=10)
 
 logup = ctk.CTkButton(master=frame, text='Create New Account', command=signup)
 logup.pack(pady=12, padx=10)
